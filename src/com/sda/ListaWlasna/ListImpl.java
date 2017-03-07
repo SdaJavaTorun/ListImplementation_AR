@@ -69,16 +69,18 @@ public class ListImpl {
         }
     }
 
-    public void listSize () {
+    public int listSize () {
         Node temp = listTail;
-        int rozmiar = 0;
+        int counter = 0;
         while (temp != null) {
             temp = temp.getNext();
-            rozmiar++;
+            counter++;
         }
-        System.out.println("Rozmiar listy wynosi: " + rozmiar);
+        return counter;
     }
+    
 
+    /*
     public void removeElement (String value) {
         Node node = new Node (value, null, null);
         Node temp = node;
@@ -102,5 +104,14 @@ public class ListImpl {
         System.out.println("Lista po usunieciu");
         printFromTheStart();
 
-    }
+    } /*
+    public void showList () {
+
+        Node list = listTail;
+        while (list != null) {
+            System.out.println(list.getValue());
+            list = list.getNext();
+        }
+
+    }*/
 }

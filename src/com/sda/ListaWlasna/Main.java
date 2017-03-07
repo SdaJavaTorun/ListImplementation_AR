@@ -15,7 +15,9 @@ public class Main {
         lista.printFromTheEnd();
         lista.printFromTheStart();
 
-        lista.listSize();
-        lista.removeElement("test");
+        System.out.print("Rozmiar listy wynosi: " + lista.listSize());
+        //lista.removeElement("test");
+
+        //lista.showList();
     }
 }
