@@ -12,6 +12,10 @@ public class Node {
         this.prev = prev;
     }
 
+    public Node(String value) {
+        this.value = value;
+    }
+
     public String getValue() { return value; }
 
     public void setValue() {
@@ -33,5 +37,4 @@ public class Node {
     public void setPrev(Node prev) {
         this.prev = prev;
     }
-
 }
