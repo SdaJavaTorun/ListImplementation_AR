@@ -78,40 +78,24 @@ public class ListImpl {
         }
         return counter;
     }
-    
 
-    /*
     public void removeElement (String value) {
-        Node node = new Node (value, null, null);
-        Node temp = node;
+        Node node = listTail;  // ustalamy pierwszy node listy
+        Node temp = node.getNext(); // i nastepny po pierwszym
 
-        if (temp.getNext() == null) {      // sprawdzamy czy usuwamy list head
-            node.setPrev(temp.getPrev());
-            temp = null;
-            node = null;
+        while (temp.getNext() != null) {
+            if (temp.getValue() == value) { // jak znaljdziemy szukany node
+                node.setNext(temp.getNext()); // do node leci wskaznik do temp next
+                temp.getNext().setPrev(node); // do wezla poprzedzajacego temp wskzanik do node
+                temp = null;                  // usuwamy obiekt
+                break;
+            }
+            else {          // szukamy dalej zgodnosci - przesuwamy wskazanie wezla
+                node = temp;
+                temp = temp.getNext();
+            }
         }
-        else if (temp.getPrev() == null) {  // sprawdzamy czy usuwamy pierwszy element
-            temp.setNext(listTail);
-            temp = null;
-            node = null;
-        }
-        else {                          // usuwamy srodkowy element listy
-            temp.setPrev(temp.getNext());
-            temp.setNext(temp.getPrev());
-            temp = null;
-            node = null;
-        }
-        System.out.println("Lista po usunieciu");
+        System.out.println("\nLista po usunieciu");
         printFromTheStart();
-
-    } /*
-    public void showList () {
-
-        Node list = listTail;
-        while (list != null) {
-            System.out.println(list.getValue());
-            list = list.getNext();
-        }
-
-    }*/
+    }
 }
